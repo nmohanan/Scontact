@@ -1,7 +1,7 @@
 <?php
 /*!
  * http://suyati.com/
- * Suyati_Contactforpin 1.6.1
+ * Suyati_Contactforpin 1.7
  * Copyright (C) 2016, Suyati Technologies
  * This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
@@ -77,7 +77,7 @@ class Suyati_Contactforpin_IndexController extends Mage_Core_Controller_Front_Ac
                 // Getting the admin assigned general email contact
                 
                 
-                $toadmin_email = Mage::getStoreConfig('trans_email/ident_support/email');
+                $toadmin_email = Mage::getStoreConfig('trans_email/ident_general/email');
                 if ($toadmin_email!="") {
                     $toadmin_email = $toadmin_email;
                 } else {
@@ -110,6 +110,7 @@ class Suyati_Contactforpin_IndexController extends Mage_Core_Controller_Front_Ac
                     $contact->save();
                     $session->addSuccess($this->__('Your Request has been received. One of our sales representatives will contact you shortly.'));
                     if ($mail->send()) {
+                        
                     }
                 
                 $this->_redirectReferer();
